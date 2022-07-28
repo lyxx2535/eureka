@@ -14,6 +14,7 @@ public class GreetingController {
 
 	@GetMapping("/greeting")
 	public Object greeting() {
+		System.out.println("运行greeting-service1的greeting");
 		return greetingService.greeting();
 	}
 }

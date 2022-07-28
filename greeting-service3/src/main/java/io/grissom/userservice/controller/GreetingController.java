@@ -1,11 +1,10 @@
-package io.grissom.adminservice.controller;
+package io.grissom.userservice.controller;
 
-import io.grissom.adminservice.controller.limit.RequestLimit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.grissom.adminservice.service.GreetingService;
+import io.grissom.userservice.service.GreetingService;
 
 @RestController
 public class GreetingController {
@@ -14,8 +13,8 @@ public class GreetingController {
 	private GreetingService greetingService;
 
 	@GetMapping("/greeting")
-	@RequestLimit(count = 20)
 	public Object greeting() {
+		System.out.println("运行greeting-service3的greeting");
 		return greetingService.greeting();
 	}
 }
